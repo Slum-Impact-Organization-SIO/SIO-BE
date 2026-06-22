@@ -50,7 +50,7 @@ SIO-BE/
 
 1. **Clone the repository** (if not already done):
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Slum-Impact-Organization-SIO/SIO-BE
    cd SIO-BE
    ```
 
