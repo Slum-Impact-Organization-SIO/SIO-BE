@@ -1,0 +1,22 @@
+# CodeRabbit Configuration File
+# For configuration schema and validator, see: https://docs.coderabbit.ai
+
+language: "en-US"
+
+reviews:
+  # Review profiles: "chill" (less noisy, reviews major logic changes) or "rigorous" (more detailed suggestions)
+  profile: "chill"
+  
+  # Set to true to allow CodeRabbit to request changes formally on the PR
+  request_changes_workflow: false
+  
+  # Collapse the walkthrough file tree by default to keep the description clean
+  collapse_walkthrough: true
+
+  # Ignore folders we don't want reviewed (e.g., test directories are fine, but virtualenvs should be ignored)
+  path_filters:
+    - "!venv/**"
+    - "!.venv/**"
+    - "!__pycache__/**"
+    - "!*.egg-info/**"
+    - "!dist/**"
