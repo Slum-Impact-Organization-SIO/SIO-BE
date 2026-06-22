@@ -3,6 +3,7 @@
 target-version = "py312"
 line-length = 88
 
+[tool.ruff.lint]
 # Select rules:
 # E/W: pycodestyle
 # F: Pyflakes
