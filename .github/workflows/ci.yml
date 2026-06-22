@@ -39,4 +39,4 @@ jobs:
 
     - name: Run unit tests (Pytest)
       run: |
-        pytest -v
+        python -m pytest -v
