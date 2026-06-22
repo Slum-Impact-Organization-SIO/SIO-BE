@@ -139,11 +139,19 @@ mypy app
 
 ## Branching & Contribution Rules
 
-To maintain codebase stability, ensure all tests pass, and track history cleanly, please adhere to the following rules:
+To maintain codebase stability, ensure all tests pass, and track history cleanly, please adhere to the following workflow and rules:
 
-* **No direct pushes:** Never push code directly to the `main`, `master`, `dev`, or `staging` branches.
-* **Use feature/change branches:** Create a dedicated branch for your work (e.g., `feature/add-auth` or `bugfix/fix-login-error`).
-* **Submit a Pull Request:** Open a PR targeting the appropriate branch to merge your changes. The CI pipeline must pass successfully, and code reviews should be completed before merge.
+### Branch Progression Flow
+All modifications must progress through our branches in the following order:
+`feature/*` or `bugfix/*` ➔ `dev` ➔ `staging` ➔ `main`
+
+1. **Feature/Change Branches:** Create a dedicated branch for your work (e.g., `feature/add-auth` or `bugfix/fix-login-error`).
+2. **Pull Requests (PRs) Required:** You must raise a separate PR for each branch transition:
+   - PR from your **feature/bugfix branch** to `dev` (for integration testing).
+   - PR from `dev` to `staging` (for staging/acceptance testing).
+   - PR from `staging` to `main` (for production release).
+3. **No direct pushes:** Never push code directly to the `dev`, `staging`, or `main` branches. Direct pushes are disabled.
+4. **CI & Review Requirements:** For every PR, the CI pipeline must pass successfully, and code reviews must be approved before merging.
 
 ---
 
@@ -152,8 +160,8 @@ To maintain codebase stability, ensure all tests pass, and track history cleanly
 The GitHub Actions configuration file is located in [.github/workflows/ci.yml](.github/workflows/ci.yml). 
 
 It automatically runs on:
-- Every push to the `master` or `main` branches.
-- Every Pull Request targeting `master` or `main`.
+- Every push to the `dev`, `staging`, or `main` branches.
+- Every Pull Request targeting `dev`, `staging`, or `main`.
 
 ### Jobs Performed:
 1. **Checkout Code**: Retrieves the repository files.
